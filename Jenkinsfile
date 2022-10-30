@@ -17,7 +17,7 @@ pipeline {
           steps {
               echo 'Deploying....'
               sh 'cd ~'
-              sh 'cd /Segundo-parcial-algoritmos-paralelos'
+              sh 'cd Segundo-parcial-algoritmos-paralelos'
               sh 'git pull origin main'
               sh 'npm install'
               sh 'sudo docker-compose build'
