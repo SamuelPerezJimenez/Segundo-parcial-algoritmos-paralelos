@@ -16,7 +16,7 @@ pipeline {
       stage('Deploy') {
           steps {
               echo 'Deploying....'
-              sh 'node --version'
+              sh 'docker --version'
           }
       }
   }
