@@ -17,6 +17,7 @@ pipeline {
           steps {
               echo 'Deploying....'
               sh 'cd ~'
+              sh 'pwd'
               sh 'cd Segundo-parcial-algoritmos-paralelos'
               sh 'git pull origin main'
               sh 'npm install'
