@@ -34,7 +34,7 @@ services:
       # Our Node app will use these to connect
       # to the database
       - POSTGRES_USER=postgres
-      # - POSTGRES_PASSWORD=1170167
+      - POSTGRES_PASSWORD=1170167
       - POSTGRES_DB=root
     ports:
       # Standard port for PostgreSQL databases
