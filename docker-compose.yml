@@ -14,6 +14,11 @@ services:
     container_name: Postgres
     image: postgres
     restart: always
+    volumes:
+      # When the PostgresSQL container is started it will run any scripts
+      # provided in the `docker-entrypoint-initdb.d` directory, this connects
+      # our seed file to that directory so that it gets run
+      - ./database-seed.sql:/docker-entrypoint-initdb.d/database-seed.sql
     ports:
       - "5433:5432"
     environment:
