@@ -3,7 +3,7 @@ services:
   app:
     build: .
     depends_on:
-      postgres:
+      db:
         condition: service_healthy
 
     ports:
