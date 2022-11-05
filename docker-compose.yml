@@ -19,9 +19,9 @@ services:
       - "5433:5432"
     environment:
       - DATABASE_HOST=localhost
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=col
+      - POSTGRES_USER=1170167
+      - POSTGRES_PASSWORD=1170167
+      - POSTGRES_DB=root
   app:
     build: .
     depends_on:

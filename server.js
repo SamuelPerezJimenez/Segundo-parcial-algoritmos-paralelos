@@ -6,10 +6,10 @@ const app = express();
 const port = 8085;
 
 const client = new Pool({
-  user: 'root',
+  user: '1170167',
   host: 'db',
-  password: 'root',
-  database: 'col',
+  password: '1170167',
+  database: 'root',
   port: 5432
 });
 
