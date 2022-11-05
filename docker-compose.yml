@@ -11,7 +11,7 @@ services:
       # our seed file to that directory so that it gets run
       - ./database-seed.sql:/docker-entrypoint-initdb.d/database-seed.sql
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready" ]
+      test: [ "CMD", "pg_isready", "-q", "-d", "root", "-U", "1170167" ]
       interval: 10s
       timeout: 5s
       retries: 5
