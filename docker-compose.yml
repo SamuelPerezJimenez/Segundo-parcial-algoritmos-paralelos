@@ -1,6 +1,17 @@
 # version: '3.8'
 services:
 
+  app:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8085:8085"
+    links:
+      - db
+    volumes:
+      - /usr/src/app/node_modules
   db:
     container_name: Postgres
     image: postgres
@@ -22,14 +33,4 @@ services:
       - POSTGRES_USER=1170167
       - POSTGRES_PASSWORD=1170167
       - POSTGRES_DB=root
-  app:
-    build: .
-    depends_on:
-      db:
-        condition: service_healthy
-    ports:
-      - "8085:8085"
-    links:
-      - db
-    volumes:
-      - /usr/src/app/node_modules
+  
