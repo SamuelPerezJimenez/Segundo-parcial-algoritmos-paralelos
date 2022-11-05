@@ -2,12 +2,10 @@
 services:
   app:
     build: .
-    depends_on:
-      db:
-        condition: service_healthy
-
     ports:
       - "8085:8085"
+    links: 
+      - db
     volumes:
       - /usr/src/app/node_modules
   db:
