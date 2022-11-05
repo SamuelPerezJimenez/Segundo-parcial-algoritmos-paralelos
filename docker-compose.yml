@@ -1,13 +1,6 @@
 # version: '3.8'
 services:
-  app:
-    build: .
-    ports:
-      - "8085:8085"
-    links: 
-      - db
-    volumes:
-      - /usr/src/app/node_modules
+
   db:
     container_name: Postgres
     image: postgres
@@ -24,3 +17,11 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=col
+  app:
+    build: .
+    ports:
+      - "8085:8085"
+    links:
+      - db
+    volumes:
+      - /usr/src/app/node_modules
