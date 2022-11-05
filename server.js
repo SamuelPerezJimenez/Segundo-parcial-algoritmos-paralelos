@@ -1,15 +1,16 @@
 // @ts-check
 
-const { Client } = require("pg");
+const { Pool } = require("pg");
 const express = require("express");
 const app = express();
 const port = 8085;
 
-const client = new Client({
-  password: "root",
-  user: "root",
-  database: "col",
-  host: "postgres",
+const client = new Pool({
+  user: 'root',
+  host: 'db',
+  password: 'root',
+  database: 'library',
+  port: 5432
 });
 
 app.use(express.static("public"));
